@@ -1,0 +1,37 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "ren_energy_api"
+version = "0.0.1"
+description = "Analyzing energy consumptions, sources and price in Portugal thorugh REN API"
+authors = [
+  { name = "Rodrigo Brust Santos" },
+]
+
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    
+]
+dependencies = [
+    "pip",
+    "python-dotenv",
+    "ruff",
+]
+requires-python = "~=3.10.0"
+
+
+[tool.ruff]
+line-length = 99
+src = ["ren_energy_api"]
+include = ["pyproject.toml", "ren_energy_api/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["ren_energy_api"]
+force-sort-within-sections = true
+
